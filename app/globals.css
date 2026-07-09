@@ -5,6 +5,50 @@
 @layer base {
   :root {
     --header-height: 72px;
+
+    /* shadcn/ui token layer — black & white (achromatic HSL triplets) */
+    --background: 0 0% 100%;
+    --foreground: 0 0% 4%;
+    --card: 0 0% 100%;
+    --card-foreground: 0 0% 4%;
+    --popover: 0 0% 100%;
+    --popover-foreground: 0 0% 4%;
+    --primary: 0 0% 9%;
+    --primary-foreground: 0 0% 98%;
+    --secondary: 0 0% 96%;
+    --secondary-foreground: 0 0% 9%;
+    --muted: 0 0% 96%;
+    --muted-foreground: 0 0% 42%;
+    --accent: 0 0% 96%;
+    --accent-foreground: 0 0% 9%;
+    --destructive: 0 0% 20%;
+    --destructive-foreground: 0 0% 98%;
+    --border: 0 0% 90%;
+    --input: 0 0% 90%;
+    --ring: 0 0% 9%;
+    --radius: 0.5rem;
+  }
+
+  .dark {
+    --background: 0 0% 0%;
+    --foreground: 0 0% 98%;
+    --card: 0 0% 4%;
+    --card-foreground: 0 0% 98%;
+    --popover: 0 0% 4%;
+    --popover-foreground: 0 0% 98%;
+    --primary: 0 0% 98%;
+    --primary-foreground: 0 0% 9%;
+    --secondary: 0 0% 15%;
+    --secondary-foreground: 0 0% 98%;
+    --muted: 0 0% 15%;
+    --muted-foreground: 0 0% 64%;
+    --accent: 0 0% 15%;
+    --accent-foreground: 0 0% 98%;
+    --destructive: 0 0% 80%;
+    --destructive-foreground: 0 0% 9%;
+    --border: 0 0% 20%;
+    --input: 0 0% 20%;
+    --ring: 0 0% 83%;
   }
 
   * {
@@ -68,7 +112,7 @@
   }
 
   .container-tight {
-    @apply mx-auto w-full max-w-[1180px] px-5 sm:px-6 lg:px-8;
+    @apply mx-auto w-full max-w-[1400px] px-5 sm:px-6 lg:px-8;
   }
 }
 
@@ -131,6 +175,36 @@
   .rule-grow {
     transform-origin: left center;
   }
+}
+
+/* Liquid-glass shimmer headline (used on the black pixel hero) */
+@keyframes hero-shimmer {
+  0% {
+    background-position: 200% center;
+  }
+  100% {
+    background-position: 0% center;
+  }
+}
+
+.hero-glass-text {
+  color: transparent;
+  background: linear-gradient(
+    135deg,
+    rgba(255, 255, 255, 1) 0%,
+    rgba(255, 255, 255, 0.45) 25%,
+    rgba(255, 255, 255, 0.12) 45%,
+    rgba(255, 255, 255, 0.92) 55%,
+    rgba(255, 255, 255, 0.25) 75%,
+    rgba(255, 255, 255, 1) 100%
+  );
+  background-size: 200% auto;
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-stroke: 1.5px rgba(255, 255, 255, 0.28);
+  filter: drop-shadow(0 15px 35px rgba(0, 0, 0, 0.45))
+    drop-shadow(0 5px 10px rgba(0, 0, 0, 0.25));
+  animation: hero-shimmer 8s linear infinite;
 }
 
 /* Respect users who prefer reduced motion */

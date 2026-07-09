@@ -21,6 +21,11 @@ const buttonVariants = cva(
         // Solid white primary for use on dark surfaces
         inverted:
           "border border-white bg-white text-ink shadow-soft hover:bg-transparent hover:text-white",
+        // Liquid-glass CTAs for the dark pixel hero
+        glass:
+          "rounded-xl bg-gradient-to-b from-white to-white/90 text-ink ring-1 ring-white/40 shadow-[inset_0_1px_1px_rgba(255,255,255,0.7),0_2px_4px_rgba(0,0,0,0.25),0_14px_28px_rgba(0,0,0,0.4)] hover:brightness-105",
+        glassOutline:
+          "rounded-xl bg-gradient-to-b from-white/[0.14] to-white/[0.05] text-white ring-1 ring-white/20 backdrop-blur-md shadow-[inset_0_1px_1px_rgba(255,255,255,0.14),0_14px_28px_rgba(0,0,0,0.35)] hover:from-white/25 hover:to-white/10",
         soft: "bg-linen text-ink hover:bg-sand",
         ghost: "text-ink hover:bg-ink/5",
         link: "text-ink underline-offset-4 hover:underline",
